@@ -31,17 +31,14 @@ of cute stuff and kill all cute stuff you encountered.
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
 1. Landing page (most important)
-2. Fighting scene
-3. Exploration
-4. Media Query View
-5. Potions (finding potions that can heal the player)
-6. Exp (experience points for the user to level up (least important))
+2. Cart Page
+3. User Page
+4. Styling
 
-## Game Components
+## User Story
 
 ### Landing Page
-What will a player see when they start your game?
-- Page's title asking for your name and a button to start the game.
+Customer will go to this page and list of digital items for a game to purchase and a select down bar that select based on see a header with logo, user, and cart.
 
 ### Game Initialization
 What will a player see when the game is started? 
@@ -66,8 +63,9 @@ score?
 
 Include the full list of features that will be part of your MVP
 1. Landing Page :
-    Input Name
-    Start Button to start game
+    User tab
+    Cart tab
+    Main page of static images of products and select drop menu to type of item
 
 2. Fighting scene : 
     Enemy would be random
@@ -128,38 +126,15 @@ Helper functions should be generic enought that they can be reused in other appl
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description. 
 if/else statement of when a random monster image shows up on the screen, have the correct name of the monster in text form above the image.
-    // append monster's name to right random monster img
-    const monsterNameAppend = $('.monsterName');
-    // monsterNameAppend.append(bunnyName)
-    if (randomMonster === 0) { // played around got it solved myself
-      // Not sure why this way doesn't work too: monsterArray[randomMonster] === monsterArray[0]
-      monsterNameAppend.append(bunnyName);
-    } else if (randomMonster === 1) {
-      monsterNameAppend.append(mewmewName);
-    } else if (randomMonster === 2) {
-      monsterNameAppend.append(iceCreamName);
-    }
 
 ## jQuery Discoveries
  Use this section to list some, but not all, of the jQuery methods and\or functionality discovered while working on this project.
-.keydown()
-.which === 37 //37 stands for left arrow key
-.show()
-.hide()
-.data()
-.fadeOut()
-setTimeout
+
 
 ## Change Log
  Section to document what changes were made and the reasoning behind those changes.
- To crop out part of image I don't need:
- Change from creating a image tag via jQuery for player and putting it into a body type div to creating another div inside that div
- and css style a background image url to it.
+
 
 ## Issues and Resolutions
  Exploring Page: 
- 1. Attack turns for player and computer: setTimeOut and fadeOut
- 2. Git cropping: cropped through photoshop though its terrible
- 3. Decreasing value and resetting: data()
- 4. Setting correct name to random monster image: if/else statement and replace value at the end and reappend it
- 5. Moving the image around: pasrseInt(had help)
+
