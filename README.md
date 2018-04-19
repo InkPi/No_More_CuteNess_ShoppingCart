@@ -40,24 +40,7 @@ Include a full list of features that have been prioritized based on the `Time an
 ### Landing Page
 Customer will go to this page and list of digital items for a game to purchase and a select down bar that select based on see a header with logo, user, and cart.
 
-### Game Initialization
-What will a player see when the game is started? 
-- a fighting scene, if I don't have time to create other scenes.
-- exploration map, if I have time, and encounter random cute monsters
-
-### Playing The Game
-What will be the flow of the game, what will the user be expeted to do and what will the user expect from the gam
--User encounter various cute enemies and need to exterminate as much as possible. He 
-has a set level and hp. Enemies are various levels and hp but generally user is stronger.
-
-### Winning The Game
-What does it look like when the game ends, what determines winning or losing?
-Game ends when user's hp reached 0. Show status of how many killed afterwards.
-
-### Game Reset
-How will the user restart the game once it has been completed.
-There will be a button at the end that says "restart?" How do I restart while keeping
-score?
+### 
 
 ## MVP 
 
@@ -78,29 +61,13 @@ Include the full list of features that will be part of your MVP
 
 Include the full list of features that you are considering for POST MVP
 ## Functional Components
-1. Exploration Map : 
-    User explore map. Encounter random enemies.
-2. Status Score page :
-    Keep score while being able to restart
-    Highest score on top
-3. Potions : User, by 50% chance, get potion from defeating monsters
-4. Experience points: User gains experience points from defeating monsters.
-    Experience points differ from monster and levels.
-    Enough points let you level up.
-
+1. API for cart
+2. Digital $ that is bought with real money. Digital will be then used to purchase digital items.
+3. More detailed description of items (not exactly important)
 
 
 Based on the initial logic defined in the previous game phases section try and breakdown the logic further into functional components, and by that we mean functions.  Does your logic indicate that code could be encapsulated for the purpose of reusablility.  Once a function has been defined it can then be incorporated into a class as a method. 
-    Multiple functions.
-    JQuery DOM: getting nodes and storing them to use them such as player.
-    CSS transition/ animations
-    If/else statements for 
-    Extends, constructor, super for same type enemies w/ diff stats(lvls, attack, and hp)
-    .innerHTML change for hp level
-    z-index for css
-    ? Method for keeping score after restarting game
-    Random floor, random math for enemy encounters and their stats
-    For loop for highest score?
+
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. 
 
