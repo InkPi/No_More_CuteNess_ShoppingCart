@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+body {
+  margin: 0;
+  text-align: center;
+  font-color: #7C2A30;
+}
+
+h2 {
+  font-family: 'Audiowide', 'Sans-serif';
+  font-color: #7C2A30;
+}
