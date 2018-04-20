@@ -10,3 +10,6 @@ VALUES ('Reform Hammer', 'images/maxresdefault.jpg', 'maxresdefault.jpg', 'ATTK:
 
 INSERT INTO item (title, img, type, power, sign, price, description)
 VALUES ('Dark Shield', 'images/darkshield.png','DEFENSE: 50+', 'Give those controlling creatures taste of fear');
+
+INSERT INTO item (title, img, type, power, sign, price, description)
+VALUES ('Bloody Spear', 'images/darkshield.png','DEFENSE: 50+', 'For stabbing through those ***. You can also');
