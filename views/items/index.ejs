@@ -1,1 +1,20 @@
 <!--all items just on index homepage-->
+<% include ../partials/boilerplate %>
+
+<% item.forEach((item) => { %> <!--from table name-->
+<div class="items">
+  <a href="/<%=item.item_id%>">
+  <h1><%=item.title%></h1>
+  <img src=<%=item.img%>>
+  <h1><%=item.type%></h1>
+  <h1><%=item.power%></h1>
+  <h1><%=item.price%></h1>
+  <h1><%=item.description%></h1>
+  </a>
+  <button type="submit" onclick="/cart">Add to Cart</button>
+  <!--where to add 'add to cart' button?-->
+</div>
+<% }) %>
+
+<% include ../partials/end %>
+

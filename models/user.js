@@ -7,8 +7,20 @@
 
 // TODO: [1] require pg-promise, and execute it like a function.
 // TODO: [2] require our DB config
-const pgp      = require('pg-promise')({
-  query: q => console.log(q.query),
-});
+connst bcrypt = require('bcrypt');
+const db = require('../config/connection');
 
-const dbConfig = require('../../config/dbConfig');
+// const pgp      = require('pg-promise')({
+//   query: q => console.log(q.query),
+// });
+
+// const dbConfig = require('../../config/dbConfig');
+
+function findUser(usern) {
+  const queryPromise = db.one(`
+    SELECT *
+    FROM customer
+    WHERE usern = $1
+  `, usern);
+  return queryPromise;
+};

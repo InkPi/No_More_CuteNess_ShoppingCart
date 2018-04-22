@@ -11,7 +11,7 @@ function getAllCart() {
   return queryPromise;
 }
 
-function getOneQuote(id) {
+function getOneItem(id) {
   const queryPromise = db.one(`
     SELECT * FROM cart WHERE cart_id = $1
   `, id);
@@ -27,6 +27,6 @@ function destroyCart(id) {
 
 module.exports = {
   getAllCart,
-  getOneQuote,
+  getOneItem,
   destroyCart
 }

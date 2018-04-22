@@ -6,25 +6,26 @@ function getAllItems() {
   const queryPromise = db.any(`
     SELECT * FROM item
   `);
+  console.log(queryPromise);
   return queryPromise
 };
 
 //getOne
 function getOneItem(id) {
   const queryPromise = db.one(`
-    SELECT * FROM item WHERE item_id = $1
-  `, id);
-  return queryPromise
+    SELECT * FROM item
+    WHERE item_id = $1`, id);
+  return queryPromise;
 };
 
 //in case I want to do item in # of same items
-function updateItem(items) {
+function updateItem(item) {
   const queryPromise = db.one(`
-    UPDATE items
+    UPDATE item
     SET title = $/title/, img = $/img/, type = $/type/, power = $/type/, price = $/type/, description = $/description/
     WHERE item_id = $/id/
     RETURNING *
-`, items);
+`, item);
  return queryPromise
 };
 
@@ -36,3 +37,10 @@ function destroyItem(id) {
   `, id);
   return queryPromise;
 };
+
+module.exports = {
+  getAllItems,
+  getOneItem,
+  updateItem,
+  destroyItem
+}

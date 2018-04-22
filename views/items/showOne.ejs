@@ -1,12 +1,15 @@
-<% include ../../partials/boilerplate %>
+<% include ../partials/boilerplate %>
 
-<div class="items">
+<% item.forEach((item) => { %> <!--from table name-->
+<div class="item-container">
   <h1><%=item.title%></h1>
-  <img src="<%=item.img%>" width="200" alt="<%=item.title%>" />
+  <img src=<%=item.img%>>
   <p><%=item.type%></p>
   <p><%=item.power%></p>
-  <p>$<%=item.price%></p>
+  <p><%=item.price%></p>
   <p><%=item.description%></p>
+  <button type="submit" onclick="/cart">Add to Cart</button>
 </div>
+<% }) %>
 
-<% include ../../partials/end %>
+<% include ../partials/end %>

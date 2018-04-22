@@ -3,10 +3,15 @@ const itemDb = require('../models/item');
 
 function getAll(req, res, next) {
   console.log('About to query itemdb getall');
+  //res.send('hello from getAll')
+  //after comment out, able to link server app.get('/' first)
   itemDb.getAllItems()
     .then(data => {
+      //res.status(200).render('items/index', {item: item});
       console.log ('Quieried itemDb and got ' + 'data.length' + 'results');
       res.locals.item = data;
+      console.log(data); //data is empty
+      //res.status(200).render('items/index', {item: data});
       next();
     })
     .catch(err=> {
@@ -15,6 +20,7 @@ function getAll(req, res, next) {
   }
 
 function getOne(req, res, next) {
+  console.log(req.params);
   itemDb.getOneItem(req.params.id)
     .then(data => {
       console.log('Queried itemdb and got ' + 'data.length' + 'results');
@@ -41,7 +47,7 @@ function getOne(req, res, next) {
 //     })
 // }
 
-function
+
 module.exports = {
   getAll,
   getOne
