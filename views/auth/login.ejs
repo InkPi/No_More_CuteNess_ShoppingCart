@@ -1,4 +1,21 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/header %>
+<!--https://github.com/RonAddy/Sample_Express_App_Auth/blob/master/views/auth/login.ejs-->
+<div class="user-container">
+  <div class="section">
+  <form method="POST" action="/auth/login">
+    <input class="input" type="text" placeholder="username" name="usern">
+  </div>
+  <div class="section">
+    <input class="input" type="email" placeholder="email" name="email">
+  </div>
+  <div class="section">
+    <input class="input" type="text" placeholder="password" name="passw">
+  </div>
+  <div class="section">
+    <input class="submit" value='Log in!' class="button is-success">
+  </div>
+  </form>
+</div>
 
 <% include ../partials/end %>

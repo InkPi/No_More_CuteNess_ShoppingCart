@@ -19,8 +19,36 @@ const db = require('../config/connection');
 function findUser(usern) {
   const queryPromise = db.one(`
     SELECT *
-    FROM customer
+    FROM user
     WHERE usern = $1
   `, usern);
   return queryPromise;
 };
+
+function createUser(user) {
+    const queryPromise = db.one(`
+    INSERT INTO user (usern, email, passw, description)
+    VALUES ($/usern/, $/email/, $/passw/, $/description/)
+    RETURNING *
+    `, user
+  );
+  return queryPromise;
+};
+
+function updateUser(user) {
+    return db.one(`
+      UPDATE user
+      SET
+      email = $/email/,
+      passw = $/passw/,
+      description = $/description/
+      WHERE id = $/id/
+      RETURNING *
+    `, user);
+  },
+
+module.exports = {
+    findUser,
+    createUser,
+    updateUser
+}

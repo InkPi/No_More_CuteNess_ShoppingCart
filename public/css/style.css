@@ -10,3 +10,9 @@ h2 {
   font-family: 'Audiowide', 'Sans-serif';
   font-color: #7C2A30;
 }
+
+#authindex {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}

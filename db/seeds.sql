@@ -1,6 +1,6 @@
 \c ncute_db
 
-DELETE FROM customer;
+DELETE FROM users;
 DELETE FROM item;
 DELETE FROM cart;
 
