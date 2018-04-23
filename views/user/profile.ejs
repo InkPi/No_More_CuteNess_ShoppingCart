@@ -3,7 +3,12 @@
 
 <div class="user-content">
   <form method="GET" action="/customers/profile">
-
+  <div class="section">
+   <h2><%=user.usern%></h2>
+  </div>
+  <div class="section">
+   <input class="input" type="email" placeholder="Email" name="username">
+  </div>
   </form>
 </div>
 <% include ../partials/end %>

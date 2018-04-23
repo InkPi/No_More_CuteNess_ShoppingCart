@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const AuthServices = require('./AuthServices');
 //put all controllers
 
 const cartController = require('../controllers/cartController');
@@ -25,12 +26,25 @@ router.route('/')
   // .get(itemController.getAll);
     .get(itemController.getAll, itemViewController.sendItems, sendErrors);
 
+//for each item after clicked
 router.route('/:id')
     .get(itemController.getOne, itemViewController.sendOneItem, sendErrors);
 
+router.get('/login', userViewControl.showLoginForm)
+
+userRouter.get('/profile', AuthServices.loginRequired, (req, res) => {
+     res.json(req.session);
+   });
+
 /*User Now*/
-// router.route('/user')
-//   .get(userController)
+router.route('/user')
+  .get(userController.getOne, userViewControl.showLoginForm, (req, res) => {
+    res.json(req.session);
+    //req.session comes from...
+  });
+
+router.route('/user/edit')
+  .get(userController.edit, userViewControl.)
 
 
 //only need one router yay
