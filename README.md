@@ -28,7 +28,7 @@ of cute stuff and kill all cute stuff you encountered.
 ![wireframe image](/images/IMG_20180418_134115.jpg)
 
 ## Entity Relationship Diagram
-![wireframe image] (/images/IMG_20180423_215852.jpg)
+![wireframe image](/images/IMG_20180423_215852.jpg)
 
 ## Priority Matrix
 
