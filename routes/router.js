@@ -12,7 +12,7 @@ const userController = require('../controllers/userController');
 const userViewController = require('../controllers/userViewControl');
 
 
-//for each item after clicked
+//for each item after clicked //got help eith put, post, delete
 Router.route('/item/:id')
     .get(itemController.getOne, itemViewController.sendOneItem, itemViewController.show406)
     .put(itemController.update, itemViewController.handleUpdate, itemViewController.show406)

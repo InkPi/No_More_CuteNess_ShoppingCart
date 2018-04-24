@@ -3,7 +3,6 @@ const itemDb = require('../models/item');
 
 function getAll(req, res, next) {
   console.log('About to query itemdb getall');
-  //res.send('hello from getAll')
   //after comment out, able to link server app.get('/' first)
   itemDb.getAllItems()
     .then(data => {
@@ -11,7 +10,6 @@ function getAll(req, res, next) {
       console.log ('Quieried itemDb and got ' + 'data.length' + 'results');
       res.locals.item = data;
       console.log(data); //data is empty
-      //res.status(200).render('items/index', {item: data});
       next();
     })
     .catch(err=> {
@@ -32,7 +30,7 @@ function getOne(req, res, next) {
     })
   }
 
-//told to do item create for cart
+//was told to do item create for cart
 function create(req, res, next) {
   console.log("this is req.body:", req.body);
   itemDb.createItem(req.body)
