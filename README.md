@@ -1,5 +1,5 @@
 Presentation Video
-[![Watch the video](/images/project2vid)
+![Watch the video](/images/project2vid.mov)
 
 ## Project Schedule
 
