@@ -1,0 +1,10 @@
+<% include ../partials/boilerplate %>
+<% include ../partials/header %>
+  <div class="form-page">
+    <%= item.forEach((item) => { %>
+    <form action="/cart/<%=item.id%>?_method=PUT" method="POST">
+    <%=cart.item_id%>
+    </form>
+    <%})%>
+  </div>
+<% include ../partials/end %>

@@ -20,7 +20,7 @@ function getAll(req, res, next) {
   }
 
 function getOne(req, res, next) {
-  console.log(req.params);
+  //console.log(req.params);
   itemDb.getOneItem(req.params.id)
     .then(data => {
       console.log('Queried itemdb and got ' + 'data.length' + 'results');
@@ -32,23 +32,42 @@ function getOne(req, res, next) {
     })
   }
 
-// function update(req, res, next) {
-//   req.body.id = req.params.id;
-//   itemDb.update
-// }
-// function update(req, res, next) {
-//   req.body.id = req.params.id;
-//   itemDb.updateStudent(req.body)
-//     .then(data => {
-//       res.redirect(`/students/${req.body.id}`)
-//     })
-//     .catch(err=> {
-//       err:err
-//     })
-// }
+//told to do item create for cart
+function create(req, res, next) {
+  console.log("this is req.body:", req.body);
+  itemDb.createItem(req.body)
+  .then(data => {
+    console.log("this is data in controller:", data);
+    res.locals.item = data;
+    next();
+  }).catch(err => next(err));
+}
 
+function destroy(req, res, next) {
+  console.log('Going to delete');
+  itemDb.destroyItem(req.params.id)
+  .then(() => {
+    next()
+  })
+  .catch(err => {
+    next(err)
+  })
+}
+
+function update(req, res, next) {
+  console.log(req.body, 'update controller');
+  itemDb.update(req.body)
+    .then((item) => {
+      res.locals.item = item;
+      next();
+    })
+    .catch(err => next(err));
+  }
 
 module.exports = {
   getAll,
-  getOne
+  getOne,
+  create,
+  destroy,
+  update
 }

@@ -1,7 +1,6 @@
 <% include ../partials/boilerplate %>
 <% include ../partials/header %>
 
-<% item.forEach((item) => { %> <!--from table name-->
 <div class="item-container">
   <h1><%=item.title%></h1>
   <img src=<%=item.img%>>
@@ -9,8 +8,14 @@
   <p><%=item.power%></p>
   <p><%=item.price%></p>
   <p><%=item.description%></p>
-  <button type="submit" onclick="/cart">Add to Cart</button>
+   <form action="/item/<%=item.id%>/edit" method="GET">
+  <input type="submit" value="Edit">
+  </form>
+  <br>
+  <form action="/item/<%=item.id%>?_method=DELETE" class='delete' method="POST">
+  <input type="submit" value="Delete">
+  </form>
 </div>
-<% }) %>
 
 <% include ../partials/end %>
+

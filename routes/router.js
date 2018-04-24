@@ -1,4 +1,4 @@
-const router = require('express').Router();
+const Router = require('express').Router();
 const AuthServices = require('./AuthServices');
 //put all controllers
 
@@ -11,41 +11,38 @@ const itemViewController = require('../controllers/itemViewControl');
 const userController = require('../controllers/userController');
 const userViewController = require('../controllers/userViewControl');
 
-// router.get('/', (req,res) => {
-//   res.send('hello')
-// })
-function sendErrors(err, req, res, next) {
-  console.log('errors here');
-  res.status(500).json({
-    status: 'error',
-    message: err.message
-  });
-};
-
-router.route('/')
-  // .get(itemController.getAll);
-    .get(itemController.getAll, itemViewController.sendItems, sendErrors);
 
 //for each item after clicked
-router.route('/:id')
-    .get(itemController.getOne, itemViewController.sendOneItem, sendErrors);
+Router.route('/item/:id')
+    .get(itemController.getOne, itemViewController.sendOneItem, itemViewController.show406)
+    .put(itemController.update, itemViewController.handleUpdate, itemViewController.show406)
+    .delete(itemController.destroy, itemViewController.handleDelete, itemViewController.show404);
 
-router.get('/login', userViewControl.showLoginForm)
+Router.get('/new', itemViewController.showAddForm);
+Router.get('/item/:id/edit', itemController.getOne, itemViewController.handleUpdate);
 
-userRouter.get('/profile', AuthServices.loginRequired, (req, res) => {
-     res.json(req.session);
-   });
 
-/*User Now*/
-router.route('/user')
-  .get(userController.getOne, userViewControl.showLoginForm, (req, res) => {
-    res.json(req.session);
-    //req.session comes from...
-  });
+Router.route('/newItem')
+    .post(itemController.create, itemViewController.handleCreate, itemViewController.show406);
 
-router.route('/user/edit')
-  .get(userController.edit, userViewControl.)
+Router.route('/item')
+    .get(itemController.getAll, itemViewController.sendItems, itemViewController.show406)
+    .post(itemController.create, itemViewController.handleCreate, itemViewController.show406);
+
+
+
+// Router.get('/user/:id', function (req, res, next) {
+//   console.log(req.params.id);
+//   res.render('special')
+// });
+
+// cart
+// Router.get('/cart', function (err, req, res, next) {
+//   onsole.log('err');
+//   res.render('cart/index')
+// });
+
 
 
 //only need one router yay
-module.exports = router;
+module.exports = Router;

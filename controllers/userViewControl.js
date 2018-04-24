@@ -1,5 +1,5 @@
 /*Copied from lab*/
-function sendOneItem(req, res) {
+function sendOneUser(req, res) {
   res.render('auth/register'), {
     item: res.locals.user
   };
@@ -13,7 +13,7 @@ function sendUser(req,res) {
 
 
 module.exports = {
-  sendOneItem,
+  sendOneUser,
   sendUser,
   showLoginForm(req, res) {
     console.log('got here');

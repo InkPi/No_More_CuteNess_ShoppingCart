@@ -1,5 +1,5 @@
 const bcrypt = require('bcrypt');
-const userDb = require('../model/user');
+const userDb = require('../models/user');
 
 /*looked at past labs and solutions*/
 

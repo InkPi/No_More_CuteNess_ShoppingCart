@@ -18,7 +18,6 @@ CREATE TABLE item (
   img TEXT,
   type VARCHAR(50),
   power VARCHAR(50),
-  --put $ in ejs
   price INT,
   description VARCHAR(300)
 );
@@ -28,15 +27,24 @@ CREATE TABLE item (
 
 --For cart creation:
 --https://github.com/awesomejt/database-schema-examples/blob/master/shopping_cart/generic_create.sql
+-- CREATE TABLE cart (
+--   id SERIAL PRIMARY KEY,
+--   --user id
+--   item_id INTEGER NOT NULL,
+--   name VARCHAR(50) NOT NULL,
+--   --cart_id INT REFERENCES item(id)
+--   last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP() NOT NULL,
+--   PRIMARY KEY (cart_id, item_id)
+--   );
+
 CREATE TABLE cart (
   id SERIAL PRIMARY KEY,
-  --user id
-  customer_id INTEGER NOT NULL,
-  name VARCHAR(50) NOT NULL
-  --cart_id INT REFERENCES item(id)
-  last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP() NOT NULL,
-  PRIMARY KEY (cart_id, item_id)
+  item_id INTEGER NOT NULL REFERENCES item(id)
   );
+
+
+
+
 
 -- CREATE TABLE CART
 -- (
@@ -56,7 +64,7 @@ CREATE TABLE cart (
 ALTER TABLE CART ADD FOREIGN KEY ( customer_id ) REFERENCES customer ( id );
 -- CREATE INDEX FK_CUSTOMERCART_INDEX_1 ON CART ( CUSTOMER_ID );
 -- ALTER TABLE CART_ITEM ADD FOREIGN KEY ( CART_ID ) REFERENCES CART ( ID );
--- ALTER TABLE CART_ITEM ADD FOREIGN KEY ( PRODUCT_ID ) REFERENCES PRODUCT ( ID );
+ALTER TABLE CART_ITEM ADD FOREIGN KEY ( item_id ) REFERENCES item ( id );
 -- CREATE INDEX FK_CARTITEMPRODUCT_INDEX_B ON CART_ITEM ( PRODUCT_ID );
 -- CREATE UNIQUE INDEX UNIQUE_NAME_INDEX_F ON CATEGORY ( NAME );
 -- ALTER TABLE PRODUCT ADD FOREIGN KEY ( CATEGORY_ID ) REFERENCES CATEGORY ( ID );

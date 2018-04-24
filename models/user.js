@@ -7,7 +7,7 @@
 
 // TODO: [1] require pg-promise, and execute it like a function.
 // TODO: [2] require our DB config
-connst bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 const db = require('../config/connection');
 
 // const pgp      = require('pg-promise')({
@@ -45,7 +45,7 @@ function updateUser(user) {
       WHERE id = $/id/
       RETURNING *
     `, user);
-  },
+  }
 
 module.exports = {
     findUser,

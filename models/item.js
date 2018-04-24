@@ -14,16 +14,28 @@ function getAllItems() {
 function getOneItem(id) {
   const queryPromise = db.one(`
     SELECT * FROM item
-    WHERE item_id = $1`, id);
+    WHERE id = $1`, id);
   return queryPromise;
 };
+
+//create for cart
+function createItem(item) {
+  console.log("this is item in model:", item);
+  const queryPromise = db.one(`
+    INSERT INTO item (title, img, type, power, price, description)
+    VALUES ($/title/, $/img/, $/type/, $/power/, $/price/, $/description/)
+    RETURNING *
+  `, item)
+  console.log('this is queryPromise:', queryPromise);
+  return queryPromise;
+}
 
 //in case I want to do item in # of same items
 function updateItem(item) {
   const queryPromise = db.one(`
     UPDATE item
     SET title = $/title/, img = $/img/, type = $/type/, power = $/type/, price = $/type/, description = $/description/
-    WHERE item_id = $/id/
+    WHERE id = $/id/
     RETURNING *
 `, item);
  return queryPromise
@@ -33,7 +45,7 @@ function updateItem(item) {
 //delete
 function destroyItem(id) {
   const queryPromise = db.none(`
-    SELECT * FROM item WHERE item_id = $1
+    DELETE FROM item WHERE id = $1
   `, id);
   return queryPromise;
 };
@@ -42,5 +54,6 @@ module.exports = {
   getAllItems,
   getOneItem,
   updateItem,
-  destroyItem
+  destroyItem,
+  createItem
 }
