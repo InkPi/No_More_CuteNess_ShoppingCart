@@ -27,6 +27,9 @@ of cute stuff and kill all cute stuff you encountered.
 
 ![wireframe image](/images/IMG_20180418_134115.jpg)
 
+## Entity Relationship Diagram
+![wireframe image] (/images/IMG_20180423_215852.jpg)
+
 ## Priority Matrix
 
 Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
