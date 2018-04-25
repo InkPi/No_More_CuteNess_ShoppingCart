@@ -64,10 +64,9 @@ Include the full list of features that you are considering for POST MVP
 3. More detailed description of items (not exactly important)
 
 
-## Code Snippet
+## Technologies used
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description. 
-if/else statement of when a random monster image shows up on the screen, have the correct name of the monster in text form above the image.
+Express, nodemon, pg-promise, ejs, morgan, body-parser. Tried using bcrypt also
 
 ## Expression Discoveries
  If I have an obsure error, after having console.log many of my codes, it's probably because I forgot to export something.
