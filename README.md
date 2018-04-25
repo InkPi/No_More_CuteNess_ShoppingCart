@@ -1,5 +1,5 @@
 Presentation Video
-![Watch the video](/images/project2vid.mov)
+![Watch the video](https://www.youtube.com/watch?v=2dI_FUOOynE&t=3s)
 
 ## Project Schedule
 
